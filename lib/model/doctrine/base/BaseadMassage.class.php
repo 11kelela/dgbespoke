@@ -14,6 +14,7 @@ Doctrine_Manager::getInstance()->bindComponent('adMassage', 'doctrine');
  * @property string $time_close
  * @property string $keywords
  * @property string $phone
+ * @property string $slug
  * @property string $description
  * @property integer $location_id
  * @property integer $rate
@@ -21,6 +22,7 @@ Doctrine_Manager::getInstance()->bindComponent('adMassage', 'doctrine');
  * @property string $lat
  * @property string $lng
  * @property boolean $is_active
+ * @property boolean $is_home
  * @property integer $priority
  * @property clob $content
  * 
@@ -31,6 +33,7 @@ Doctrine_Manager::getInstance()->bindComponent('adMassage', 'doctrine');
  * @method string    getTimeClose()   Returns the current record's "time_close" value
  * @method string    getKeywords()    Returns the current record's "keywords" value
  * @method string    getPhone()       Returns the current record's "phone" value
+ * @method string    getSlug()        Returns the current record's "slug" value
  * @method string    getDescription() Returns the current record's "description" value
  * @method integer   getLocationId()  Returns the current record's "location_id" value
  * @method integer   getRate()        Returns the current record's "rate" value
@@ -38,6 +41,7 @@ Doctrine_Manager::getInstance()->bindComponent('adMassage', 'doctrine');
  * @method string    getLat()         Returns the current record's "lat" value
  * @method string    getLng()         Returns the current record's "lng" value
  * @method boolean   getIsActive()    Returns the current record's "is_active" value
+ * @method boolean   getIsHome()      Returns the current record's "is_home" value
  * @method integer   getPriority()    Returns the current record's "priority" value
  * @method clob      getContent()     Returns the current record's "content" value
  * @method adMassage setName()        Sets the current record's "name" value
@@ -47,6 +51,7 @@ Doctrine_Manager::getInstance()->bindComponent('adMassage', 'doctrine');
  * @method adMassage setTimeClose()   Sets the current record's "time_close" value
  * @method adMassage setKeywords()    Sets the current record's "keywords" value
  * @method adMassage setPhone()       Sets the current record's "phone" value
+ * @method adMassage setSlug()        Sets the current record's "slug" value
  * @method adMassage setDescription() Sets the current record's "description" value
  * @method adMassage setLocationId()  Sets the current record's "location_id" value
  * @method adMassage setRate()        Sets the current record's "rate" value
@@ -54,6 +59,7 @@ Doctrine_Manager::getInstance()->bindComponent('adMassage', 'doctrine');
  * @method adMassage setLat()         Sets the current record's "lat" value
  * @method adMassage setLng()         Sets the current record's "lng" value
  * @method adMassage setIsActive()    Sets the current record's "is_active" value
+ * @method adMassage setIsHome()      Sets the current record's "is_home" value
  * @method adMassage setPriority()    Sets the current record's "priority" value
  * @method adMassage setContent()     Sets the current record's "content" value
  * 
@@ -103,6 +109,11 @@ abstract class BaseadMassage extends sfDoctrineRecord
              'comment' => 'Số điện thoại',
              'length' => 255,
              ));
+        $this->hasColumn('slug', 'string', 255, array(
+             'type' => 'string',
+             'comment' => 'link',
+             'length' => 255,
+             ));
         $this->hasColumn('description', 'string', 2000, array(
              'type' => 'string',
              'notnull' => true,
@@ -139,6 +150,12 @@ abstract class BaseadMassage extends sfDoctrineRecord
              'notnull' => true,
              'default' => false,
              'comment' => 'Trạng thái hiển thị (0: ko hiển thị, 1: hiển thị)',
+             ));
+        $this->hasColumn('is_home', 'boolean', null, array(
+             'type' => 'boolean',
+             'notnull' => true,
+             'default' => false,
+             'comment' => 'Hiển thị trang chủ',
              ));
         $this->hasColumn('priority', 'integer', 5, array(
              'type' => 'integer',

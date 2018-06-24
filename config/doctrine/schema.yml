@@ -570,6 +570,7 @@ adMassage:
     time_close: { type: string(255), comment: "Thời gian đóng cửa" }
     keywords: { type: string(255), comment: "keywords" }
     phone: { type: string(255), comment: "Số điện thoại" }
+    slug: { type: string(255), comment: "link" }
     description: { type: string(2000), notnull: true,  comment: "mô tả"}
     location_id: { type: integer(5), comment: "Quận, huyện"}
     rate: { type: integer(5), comment: "rate"}
@@ -577,6 +578,7 @@ adMassage:
     lat: { type: string(255), comment: "tọa độ latitude"}
     lng: { type: string(255), comment: "tọa dộ longtidude"}
     is_active: { type: boolean, notnull: true, default: false, comment: "Trạng thái hiển thị (0: ko hiển thị, 1: hiển thị)" }
+    is_home: { type: boolean, notnull: true, default: false, comment: "Hiển thị trang chủ" }
     priority: { type: integer(5), notnull: true, comment: "Độ ưu tiên hiển thị" }
     content: { type: clob, comment: "Nội dung bài viết"}
 adMassageImage:
