@@ -26,10 +26,10 @@ all:
   member_images: member
   image_default: 'http://tuhocxuatnhapkhau.com/images/default.jpg'
   image_default_video_default: 'http://tuhocxuatnhapkhau.com/images/default.jpg'
-  upload_media_file: "/root/apps/projects/xnk/xnk/web/uploads"
-  url_media_file: http://tuhocxuatnhapkhau.com/uploads
-  url_media_default_file: http://tuhocxuatnhapkhau.com/images/default-image.jpg
-  image_default: http://tuhocxuatnhapkhau.com/images/default-image.jpg
+  upload_media_file: "F:\code\dgbespoke\dgbespoke/web/uploads"
+  url_media_file: http://localhost:9696/uploads
+  url_media_default_file: http://localhost:9696/images/default-image.jpg
+  image_default: http://localhost:9696/images/default-image.jpg
   #upload_media_file: /uploads
 
   url_media_file: /uploads

@@ -542,3 +542,60 @@ AdActivity:
     priority: { type: integer(5), notnull: true, comment: "Độ ưu tiên hiển thị" }
     type: { type: integer(5), notnull: true, comment: "Loại chuyên mục" }
     is_active: { type: boolean, notnull: false, default: false, comment: "Trạng thái"}
+
+adLocation:
+  #connection: doctrine
+  tableName: ad_location
+  actAs:
+    VtBlameable: ~
+    Timestampable: ~
+  columns:
+    name: { type: string(255), notnull: true, comment: "Tên tỉnh thành" }
+    code: { type: string(255), notnull: true, comment: "Mã tỉnh thành" }
+    is_active: { type: boolean, notnull: true, default: false, comment: "Trạng thái hiển thị (0: ko hiển thị, 1: hiển thị)" }
+    parent_id: { type: integer(5), comment: "Danh mục cha"}
+    level: { type: integer, default: 0, comment: "phân cấp chuyên mục"}
+    priority: { type: integer(5), notnull: true, comment: "Độ ưu tiên hiển thị" }
+
+adMassage:
+  #connection: doctrine
+  tableName: ad_massage
+  actAs:
+    Timestampable: ~
+  columns:
+    name: { type: string(255), notnull: true, comment: "Tên cơ sở" }
+    image: { type: string(255), comment: "ảnh đại diện"}
+    address: { type: string(255), comment: "Địa chỉ" }
+    time_open: { type: string(255), comment: "Thời gian mở cửa" }
+    time_close: { type: string(255), comment: "Thời gian đóng cửa" }
+    keywords: { type: string(255), comment: "keywords" }
+    phone: { type: string(255), comment: "Số điện thoại" }
+    description: { type: string(2000), notnull: true,  comment: "mô tả"}
+    location_id: { type: integer(5), comment: "Quận, huyện"}
+    rate: { type: integer(5), comment: "rate"}
+    total_view: { type: integer(5), comment: "Số lượt xem"}
+    lat: { type: string(255), comment: "tọa độ latitude"}
+    lng: { type: string(255), comment: "tọa dộ longtidude"}
+    is_active: { type: boolean, notnull: true, default: false, comment: "Trạng thái hiển thị (0: ko hiển thị, 1: hiển thị)" }
+    priority: { type: integer(5), notnull: true, comment: "Độ ưu tiên hiển thị" }
+    content: { type: clob, comment: "Nội dung bài viết"}
+adMassageImage:
+  #connection: doctrine
+  tableName: ad_massage_image
+  actAs:
+    Timestampable: ~
+  columns:
+    file_path: { type: string(255), notnull: true, comment: "Đường dẫn file"}
+    massage_id: { type: integer, comment: "Cơ sở"}
+    priority: { type: integer(5), notnull: true, comment: "Độ ưu tiên hiển thị" }
+    is_active: { type: boolean, notnull: true, default: false, comment: "Trạng thái hiển thị (0: ko hiển thị, 1: hiển thị)" }
+
+adMassageComment:
+  #connection: doctrine
+  tableName: ad_massage_comment
+  actAs:
+    Timestampable: ~
+  columns:
+    massage_id: { type: integer, comment: "Cơ sở"}
+    comment: { type: string(1000), comment: "Nội dung comment" }
+    is_active: { type: boolean, notnull: true, default: false, comment: "Trạng thái hiển thị (0: ko hiển thị, 1: hiển thị)" }

@@ -13,22 +13,26 @@ class VtSEO
      * @return array
      */
     public static function getSeoHomepage(){
+        $listAllConfig = AdConfigTable::getAllConfig();
+        $listConfig = array();
+        if($listAllConfig){
+            foreach ($listAllConfig as $val){
+                $listConfig[$val['config_key']] = $val['config_val'];
+            }
+        }
         $meta = array();
-        $seo_title = VtSEO::getPlainText(sfConfig::get('app_seo_title'),90);
-        $meta['title'] = $seo_title;
-        $seo_description = VtHelper::truncate(sfConfig::get('app_seo_description'),160,'...');
-        $meta['description'] = $seo_description;
-        $seo_keywords = VtHelper::truncate(sfConfig::get('app_seo_keywords'),160,'...');
-        $meta['keywords'] = $seo_keywords;
-        $meta['og_image'] = sfConfig::get('app_seo_ogImage');
-        $meta['og:image'] = sfConfig::get('app_seo_ogImage');
-        $meta['og_url'] = sfConfig::get('app_seo_url');
-        $meta['og_description'] = $seo_description;
-        $meta['og_title'] = $seo_title;
-        $meta['og_site_name'] = $seo_title;
-        $meta['dc_title'] = $seo_title;
-        $meta['dc_keywords'] = $seo_keywords;
-        $meta['news_keywords'] = $seo_keywords;
+        $meta['title'] = !empty($listConfig['fb_title'])?$listConfig['fb_title']:'';
+        $meta['description'] = !empty($listConfig['fb_description'])?$listConfig['fb_description']:'';
+        $meta['keywords'] = !empty($listConfig['fb_keywords'])?$listConfig['fb_keywords']:'';
+        $meta['og_image'] = !empty($listConfig['fb_imgage'])?$listConfig['fb_imgage']:'';
+        $meta['og:image'] = !empty($listConfig['fb_imgage'])?$listConfig['fb_imgage']:'';
+        $meta['og_url'] = !empty($listConfig['fb_url'])?$listConfig['fb_url']:'';
+        $meta['og_description'] = !empty($listConfig['fb_description'])?$listConfig['fb_description']:'';
+        $meta['og_title'] = !empty($listConfig['fb_title'])?$listConfig['fb_title']:'';
+        $meta['og_site_name'] =!empty($listConfig['fb_site_name'])?$listConfig['fb_site_name']:'';
+        $meta['dc_title'] = !empty($listConfig['fb_title'])?$listConfig['fb_title']:'';
+        $meta['dc_keywords'] = !empty($listConfig['fb_keywords'])?$listConfig['fb_keywords']:'';
+        $meta['news_keywords'] = !empty($listConfig['fb_keywords'])?$listConfig['fb_keywords']:'';
         return $meta;
     }
 

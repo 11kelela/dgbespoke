@@ -2,7 +2,7 @@ all:
   doctrine:
     class: sfDoctrineDatabase
     param:
-      dsn: 'mysql:host=localhost;dbname=dung_xnk'
+      dsn: 'mysql:host=localhost;dbname=massage_dn'
       username: root
       password:
       attributes: { default_table_charset: utf8, default_table_collate: utf8_general_ci }

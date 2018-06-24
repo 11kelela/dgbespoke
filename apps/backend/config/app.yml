@@ -60,29 +60,17 @@ all:
               credentials: [[admin]]
               route: ad_document_category
               icon: squares36.png
-#            Quản lý tài liệu:
-#              credentials: [[admin]]
-#              route: ad_document
-#              icon: squares36.png
-            Quản lý tài liệu download:
+            Quản lý Quận huyện:
               credentials: [[admin]]
-              route: ad_document_download
-              icon: squares36.png
-            Quản lý giảng viên:
-              credentials: [[admin]]
-              route: ad_giang_vien
+              route: ad_location
               icon: users6.png
-            Quản lý học viên:
+            Quản lý cơ sở massage:
               credentials: [[admin]]
-              route: ad_hoc_vien
+              route: ad_massage
               icon: users6.png
-            Giá trị & hoạt động:
+            Quản lý ảnh cơ sở massage:
               credentials: [[admin]]
-              route: ad_activity
-              icon: users6.png
-            Quản lý link liên kết:
-              credentials: [[admin]]
-              route: ad_link
+              route: ad_massage_image
               icon: users6.png
         Quản trị hệ thống:
           credentials: [admin]
@@ -92,6 +80,9 @@ all:
               icon: users6.png
             Danh sách quyền hạn:
               route: sf_guard_permission
+              icon: users6.png
+            Quản lý cấu hình:
+              route: ad_config
               icon: users6.png
         Ngôn ngữ:
           dropdown:

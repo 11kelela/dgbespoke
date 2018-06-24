@@ -1,3 +1,39 @@
+ad_massage_image:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdMassageImage
+    module:               adMassageImage
+    prefix_path:          /adMassageImage
+    column:               id
+    with_wildcard_routes: true
+
+ad_massage:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdMassage
+    module:               adMassage
+    prefix_path:          /adMassage
+    column:               id
+    with_wildcard_routes: true
+
+ad_location:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdLocation
+    module:               adLocation
+    prefix_path:          /adLocation
+    column:               id
+    with_wildcard_routes: true
+
+ad_config:
+  class: sfDoctrineRouteCollection
+  options:
+    model:                AdConfig
+    module:               adConfig
+    prefix_path:          /adConfig
+    column:               id
+    with_wildcard_routes: true
+
 ad_activity:
   class: sfDoctrineRouteCollection
   options:
