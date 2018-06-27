@@ -446,7 +446,7 @@ class VtHelper
         return $str;
     }
 
-    public static function getUrlImagePathThumb($objectStr, $imageName, $configDefaultImage = "app_url_media_default_file")
+    public static function getUrlImagePathThumb($objectStr, $imageName, $width = 100, $height = 100, $configDefaultImage = "app_url_media_default_file")
     {
         try {
 
@@ -457,11 +457,11 @@ class VtHelper
                 //them 1 doan code check exits file, neu ko ton tai thi cung hidden di
                 //u01/apps/imuzik/cms-web/web/uploads/images
                 $imageName = ltrim($imageName, "/");
-                $filename = sfConfig::get("app_upload_media_file") . "/" . $objectStr . "/thumbs/" . $imageName;
+                $filename = sfConfig::get("app_upload_media_file") . "/" . $objectStr . "/thumbs/" . $width . $height . "/" . $imageName;
                 if (is_file($filename)) {
-                    return sfConfig::get('app_url_media_file') . "/" . $objectStr . "/thumbs/" . $imageName;
+                    return sfConfig::get('app_url_media_file') . "/" . $objectStr . "/thumbs/" . $width . $height . "/" . $imageName;
                 } else {
-                    return self::createImageThumbnail($objectStr, $imageName, "thumbs", 100, 100, $configDefaultImage);
+                    return self::createImageThumbnail($objectStr, $imageName, "thumbs", $width, $height, $configDefaultImage);
                 }
             }
         } catch (Exception $e) {
@@ -474,8 +474,9 @@ class VtHelper
     public static function createImageThumbnail($objectStr, $imageName, $folderThumbName, $width, $height, $configDefaultImage = "app_url_media_default_file")
     {
         try {
-            $full_path_file = sfConfig::get("app_upload_media_file") . "/" . $objectStr . "/" . $folderThumbName . "/" . $imageName;
+            $full_path_file = sfConfig::get("app_upload_media_file") . "/" . $objectStr . "/" . $folderThumbName . "/" . $width . $height . "/" . $imageName;
             $originalImage = sfConfig::get("app_upload_media_file") . "/" . $objectStr . "/" . $imageName;
+
             if (is_file($originalImage)) {
                 $file_name = basename($full_path_file); //test.jpg
                 $folderThumb = str_replace($file_name, "", $full_path_file); //duong dan file
@@ -483,10 +484,10 @@ class VtHelper
                     @mkdir($folderThumb, 0777, true);
                 }
                 //neu ton tai $originalImage thi generate no ra anh thumbnail
-                $thumbnail = new sfThumbnail($width, $height);
+                $thumbnail = new sfThumbnail($width, $height, false);
                 $thumbnail->loadFile($originalImage);
                 $thumbnail->save($full_path_file, 'image/jpeg');
-                return sfConfig::get('app_url_media_file') . "/" . $objectStr . "/" . $folderThumbName . "/" . $imageName;
+                return sfConfig::get('app_url_media_file') . "/" . $objectStr . "/" . $folderThumbName . "/" . $width . $height . '/' . $imageName;
             }
             return sfConfig::get($configDefaultImage);
         } catch (Exception $ex) {

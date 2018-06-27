@@ -29,4 +29,18 @@ class adMassageTable extends Doctrine_Table
             ->where('slug=?', $slug)
             ->fetchArray();
     }
+
+    public static function getListMassage($limit = 8, $offset = 0)
+    {
+        $query = adMassageTable::getInstance()->createQuery()
+            ->andWhere('is_active=?', 1)
+            ->orderBy('priority desc, updated_at desc')
+            ->limit($limit)
+            ->offset($offset)
+            ->fetchArray();
+        if (!empty($query)) {
+            return $query;
+        }
+        return false;
+    }
 }

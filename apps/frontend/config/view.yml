@@ -13,24 +13,20 @@ default:
     #robots:       index, follow
 
   stylesheets:
-    - jquery-ui.css
-    - font-awesome-4.2.0/css/font-awesome.min.css
-    - lato/css/lato.min.css
-    - swiper.css
-    - jquery.mmenu.all.css
-    - style.css
-    - a.css
-    - grid.css
-    - flexslider.css
+    - /massage/style/css/semantic.min.css
+    - /massage/style/css/vendor.min.css
+    - /massage/style/css/styles.min.css
+    - /massage/style/css/customizer.min.css
+    - /massage/style/css/iziToast.min.css
+    - /massage/style/css/cssBundle.css
   javascripts:
-    - jquery-1.10.1.min.js
-    - jquery.form.min.js
-    - jquery-ui-1.10.3.custom.min.js
-    - jquery.mmenu.min.all.js
-    - script.js
-    - swiper.js
-    - jquery.flexslider.js
-#    - library.js
+#    - /massage/style/bundle.js
+    - /massage/style/js/jquery.min.js
+    - /massage/style/js/vendor.min.js
+    - /massage/style/js/scripts.min.js
+    - /massage/style/js/customizer.min.js
+    - /massage/style/js/iziToast.min.js
+    - /massage/style/js/js_update.js
 
   has_layout:     true
   layout:         layout
