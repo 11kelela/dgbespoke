@@ -8,12 +8,18 @@ ajax_load_list_item:
 detail_item:
   url: /detailItem/:slug
   param: {module: pageHome, action: detailItem}
+listMessage:
+  url: /listMessage/:location
+  param: {module: pageHome, action: listMessage}
+listMessage2:
+  url: /listMessage2
+  param: {module: pageHome, action: listMessage2}
 
 # default rules
 homepage:
-  url:   /
+  url:   /:location
 #  param: { module: pageHome, action: index }
-  param: { module: pageHome, action: index}
+  param: { module: pageHome, action: index, location: ''}
   requirements: { sf_method: get }
 
 # generic rules

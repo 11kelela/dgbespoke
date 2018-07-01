@@ -30,16 +30,55 @@ class adMassageTable extends Doctrine_Table
             ->fetchArray();
     }
 
-    public static function getListMassage($limit = 8, $offset = 0)
+    public static function getListMassage($limit = 8, $offset = 0, $location = false, $all = false)
     {
-        $query = adMassageTable::getInstance()->createQuery()
-            ->andWhere('is_active=?', 1)
-            ->orderBy('priority desc, updated_at desc')
-            ->limit($limit)
-            ->offset($offset)
-            ->fetchArray();
+        if (!$all) {
+            $query = adMassageTable::getInstance()->createQuery()
+                ->andWhere('is_active=?', 1);
+            if ($location)
+                $query->andWhere('location_id=?', $location);
+            $query->orderBy('priority desc, updated_at desc')
+                ->limit($limit)
+                ->offset($offset)
+                ->fetchArray();
+        } else {
+            $rawQuery = "SELECT a.*, b.name as locationName FROM ad_massage a
+            LEFT JOIN ad_location b ON a.location_id=b.id
+            WHERE b.code = ? AND a.is_active=1
+            ORDER BY a.total_view DESC
+            LIMIT $limit OFFSET $offset
+            ;";
+            $q = Doctrine_Manager::getInstance()->getCurrentConnection();
+            $query = $q->fetchAssoc($rawQuery, array($location));
+        }
+
         if (!empty($query)) {
             return $query;
+        }
+        return false;
+    }
+
+    public static function getListMassageByLocation($location, $limit)
+    {
+        $rawQuery = "SELECT a.*, b.name as locationName FROM ad_massage a
+        LEFT JOIN ad_location b ON a.location_id=b.id
+        WHERE b.code = ? AND a.is_active=1
+        ORDER BY a.total_view DESC
+        LIMIT $limit
+        ;";
+
+//        $rawQuery="SELECT * FROM ad_massage WHERE 1=1
+//        AND location_id IN(
+//        SELECT id FROM ad_location WHERE CODE=?
+//        ) AND is_active=1
+//        ORDER BY total_view DESC
+//        LIMIT $limit
+//        ;";
+        $q = Doctrine_Manager::getInstance()->getCurrentConnection();
+        $result = $q->fetchAssoc($rawQuery, array($location));
+//        $result = $q->fetchAssoc($rawQuery, array('code' => $location, 'limit' => $limit));
+        if (!empty($result)) {
+            return $result;
         }
         return false;
     }
