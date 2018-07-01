@@ -25,19 +25,19 @@
                 </div>
                 <div class="padding-bottom-3x mb-1" style="padding: 0px 20px;">
                     <div class="row">
-                        <?php include_partial('pageHome/listMenu') ?>
+                        <?php include_component('pageHome', 'listMenu') ?>
 
                         <div class="col-xl-9 col-lg-8 order-lg-2">
-<!--                            <div class="shop-toolbar mb-2">-->
-<!--                                <div class="column">-->
-<!--                                    <div class="shop-sorting"><label for="sorting">Sắp Xếp:</label><select-->
-<!--                                            class="form-control click-pointer">-->
-<!--                                            <option value="">Gợi ý bởi Faby</option>-->
-<!--                                            <option value="rating">Rating</option>-->
-<!--                                            <option value="distance">Khoảng Cách</option>-->
-<!--                                        </select></div>-->
-<!--                                </div>-->
-<!--                            </div>-->
+                            <!--                            <div class="shop-toolbar mb-2">-->
+                            <!--                                <div class="column">-->
+                            <!--                                    <div class="shop-sorting"><label for="sorting">Sắp Xếp:</label><select-->
+                            <!--                                            class="form-control click-pointer">-->
+                            <!--                                            <option value="">Gợi ý bởi Faby</option>-->
+                            <!--                                            <option value="rating">Rating</option>-->
+                            <!--                                            <option value="distance">Khoảng Cách</option>-->
+                            <!--                                        </select></div>-->
+                            <!--                                </div>-->
+                            <!--                            </div>-->
                             <div>
                                 <?php
                                 if (!$location && $location == '') {

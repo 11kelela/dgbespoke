@@ -33,14 +33,14 @@ class adMassageTable extends Doctrine_Table
     public static function getListMassage($limit = 8, $offset = 0, $location = false, $all = false)
     {
         if (!$all) {
-            $query = adMassageTable::getInstance()->createQuery()
+            $q = adMassageTable::getInstance()->createQuery()
                 ->andWhere('is_active=?', 1);
             if ($location)
-                $query->andWhere('location_id=?', $location);
-            $query->orderBy('priority desc, updated_at desc')
+                $q->andWhere('location_id=?', $location);
+            $q->orderBy('priority desc, updated_at desc')
                 ->limit($limit)
-                ->offset($offset)
-                ->fetchArray();
+                ->offset($offset);
+            $query = $q->fetchArray();
         } else {
             $rawQuery = "SELECT a.*, b.name as locationName FROM ad_massage a
             LEFT JOIN ad_location b ON a.location_id=b.id
@@ -81,5 +81,23 @@ class adMassageTable extends Doctrine_Table
             return $result;
         }
         return false;
+    }
+
+    public static function countListMassageGroupByLocation()
+    {
+        $q = adMassageTable::getInstance()->createQuery()
+            ->select('location_id, count(location_id)')
+            ->andWhere('is_active=1')
+            ->groupBy('location_id')
+            ->fetchArray();
+        if (!empty($q)) {
+            $arrLocation = [];
+            foreach ($q as $item) {
+                $arrLocation['mm_' . $item['location_id']] = $item['count'];
+            }
+            return $arrLocation;
+        }
+        return false;
+
     }
 }
