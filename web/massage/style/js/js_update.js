@@ -1,12 +1,6 @@
 /**
  * Created by conghuyvn8x on 6/27/2018.
  */
-$(document).ready(function () {
-    loadItem();
-    $('#l-m').click(function () {
-        loadItem();
-    });
-});
 
 function loadItem() {
     var url = $('#load-url').val();
@@ -14,7 +8,7 @@ function loadItem() {
     $.ajax({
         url: url,
         type: "post",
-        data: {"page": page},
+        data: {"page": page, "isAll": isAll, "location": locationItem},
         success: function (data) {
             console.log('xx:' + data.errCode);
             if (data.errCode == '0') {

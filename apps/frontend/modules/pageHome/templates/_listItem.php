@@ -30,12 +30,12 @@ if ($listItem) {
 
                 <h3 class="product-title" style="height: 30px;" title="<?php echo htmlentities($item['name']) ?>"><a
                         href="<?php echo url_for('@detail_item?slug=' . $item['slug']) ?>"><abbr
-                            class="click-pointer" title="Spa De Palace Fortuna Hotel">
+                            class="click-pointer" title="<?php echo htmlentities($item['address']) ?>">
                             <?php echo htmlentities($item['name']) ?>
                         </abbr></a></h3><h4 class="product-price"
                                             style="height: 40px;">
                     <abbr
-                        class="click-pointer" title="6B Láng Hạ - Ba Đình - Hà Nội">
+                        class="click-pointer" title="<?php echo htmlentities($item['address']) ?>">
                         <?php echo htmlentities($item['address']) ?>
                     </abbr></h4>
 
