@@ -61,6 +61,10 @@ class pageHomeActions extends sfActions
         if ($slug) {
             $massage = adMassageTable::checkSlug($slug);
             $slide = adMassageImageTable::getListSlideByMassage($massage[0]['id']);
+            $seoHomePage = VtSEO::getSeoDetailMassage($massage[0]);
+            if($seoHomePage){
+                $this->returnHtmlSeoPage($seoHomePage);
+            }
         }
         $this->massage = $massage;
         $this->listSlide = $slide;

@@ -36,6 +36,32 @@ class VtSEO
         return $meta;
     }
 
+    public static function getSeoDetailMassage($massage){
+        $listAllConfig = AdConfigTable::getAllConfig();
+        $listConfig = array();
+        if($listAllConfig){
+            foreach ($listAllConfig as $val){
+                $listConfig[$val['config_key']] = $val['config_val'];
+            }
+        }
+//        $seoOgImage = $listConfig['domain'].sfConfig::get('app_article_images'), $massage['image'];
+        $seoOgImage = $listConfig['domain'].'/uploads/' . sfConfig::get('app_article_images').'/'. $massage['image'];
+        $meta = array();
+        $meta['title'] = !empty($massage['name'])?$massage['name']:'';
+        $meta['description'] = !empty($massage['description'])?$massage['description']:'';
+        $meta['keywords'] = !empty($listConfig['fb_keywords'])?$listConfig['fb_keywords']:'';
+        $meta['og_image'] = $seoOgImage;
+        $meta['og:image'] = $seoOgImage;
+        $meta['og_url'] = $listConfig['domain'].'/chi-tiet/'.$massage['slug'];
+        $meta['og_description'] = !empty($massage['description'])?$massage['description']:'';
+        $meta['og_title'] = !empty($massage['name'])?$massage['name']:'';
+        $meta['og_site_name'] =!empty($listConfig['fb_site_name'])?$listConfig['fb_site_name']:'';
+        $meta['dc_title'] = !empty($massage['name'])?$massage['name']:'';
+        $meta['dc_keywords'] = !empty($listConfig['fb_keywords'])?$listConfig['fb_keywords']:'';
+        $meta['news_keywords'] = !empty($listConfig['fb_keywords'])?$listConfig['fb_keywords']:'';
+        return $meta;
+    }
+
     //seo trang chuyen muc tin tuc
     public static function getSeoCategory($category){
         $meta = array();
