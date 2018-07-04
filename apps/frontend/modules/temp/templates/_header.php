@@ -59,7 +59,7 @@
             </div>
             <div class="site-branding" style="display: inline-table;"><a class="site-logo" href="<?php echo url_for('@homepage') ?>"
                                                                          style="padding-left: 30px; padding-top: 10px;"><img
-                        src="/logo Faby.png"></a></div>
+                        src="/images/logo.png" style="width: 60px; height: 40px;"></a></div>
             <nav class="site-menu">
                 <ul>
                     <li id="home-h" class=""><a href="/"><span>Trang Chủ</span></a></li>
