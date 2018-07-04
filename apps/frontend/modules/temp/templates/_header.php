@@ -59,47 +59,15 @@
             </div>
             <div class="site-branding" style="display: inline-table;"><a class="site-logo" href="<?php echo url_for('@homepage') ?>"
                                                                          style="padding-left: 30px; padding-top: 10px;"><img
-                        src="/images/logo.png" style="width: 60px; height: 40px;"></a></div>
+                        src="/images/logo.png" style="width: 60px; height: 40px;" alt="Trang chủ"></a></div>
             <nav class="site-menu">
                 <ul>
-                    <li id="home-h" class=""><a href="/"><span>Trang Chủ</span></a></li>
-                    <li id="store-h" class="active"><a href="/store"><span>Cửa Hàng</span></a></li>
-                    <li id="product-h" class=""><a href="/product"><span>Sản Phẩm</span></a></li>
-                    <li id="blog-h" class=""><a href="/blog"><span>Reviews</span></a></li>
-                    <li class=""><a href="/about"><span>Tải Ứng dụng</span></a></li>
+                    <li id="home-h" class=""><a href="<?php echo url_for('@homepage') ?>"><span>Trang Chủ</span></a></li>
                 </ul>
             </nav>
             <div class="toolbar">
                 <div class="inner">
-                    <div class="tools">
-                        <div class="current-location"><span>Vị trí của bạn:<br> <span
-                                    id="current-location">T.P Hà Nội</span></span>
 
-                            <div><span><i aria-hidden="true" class="location arrow icon"></i></span></div>
-                        </div>
-                        <i aria-hidden="true" class="search icon"></i>
-
-                        <div class="account"><a href="#"></a><img src="/AppIcon.png" style="border-radius: 50%;"><a
-                                href="#"><span></span></a></div>
-                        <span class="account-name">Khách </span>
-
-                        <div class="cart"><a href="/cart"></a><i aria-hidden="true" class="shopping bag icon"></i><span
-                                class="count">0</span><span class="subtotal">0 VNĐ</span>
-
-                            <div class="toolbar-dropdown">
-                                <div></div>
-                                <div class="toolbar-dropdown-group">
-                                    <div class="column"><span class="text-lg">Total:</span></div>
-                                    <div class="column text-right"><span class="text-lg text-medium">0 VNĐ</span></div>
-                                </div>
-                                <div class="toolbar-dropdown-group">
-                                    <div class="column"><a class="btn btn-sm btn-block btn-secondary" href="/cart">Xem
-                                            Giỏ Hàng</a></div>
-                                    <div class="column"><a class="btn btn-sm btn-block btn-success">Đặt Hàng</a></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div></div>
