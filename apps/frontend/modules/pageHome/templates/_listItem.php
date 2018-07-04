@@ -10,19 +10,6 @@ if ($listItem) {
         ?>
         <div class="col-sm-3 grid-item" style="padding: 10px;min-width: 190px; margin: 0px auto">
             <div class="product-card ">
-                <div class="product-badge">
-                    <div class="ui star disabled rating" role="radiogroup"><i
-                            aria-checked="false" aria-posinset="1" aria-setsize="5"
-                            class="active icon" tabindex="0" role="radio"></i><i
-                            aria-checked="false" aria-posinset="2" aria-setsize="5"
-                            class="active icon" tabindex="0" role="radio"></i><i
-                            aria-checked="false" aria-posinset="3" aria-setsize="5"
-                            class="active icon" tabindex="0" role="radio"></i><i
-                            aria-checked="true" aria-posinset="4" aria-setsize="5"
-                            class="active icon" tabindex="0" role="radio"></i><i
-                            aria-checked="false" aria-posinset="5" aria-setsize="5"
-                            class="icon" tabindex="0" role="radio"></i></div>
-                    <span style="position: absolute; right: 36px;"></span></div>
                 <a class="product-thumb" title="<?php echo htmlentities($item['name']) ?>"
                    href="<?php echo url_for('@detail_item?slug=' . $item['slug']) ?>"><img
                         src="<?php echo VtHelper::getUrlImagePathThumb(sfConfig::get('app_article_images'), $item['image'], 100, 100) ?>"
@@ -58,7 +45,7 @@ if ($listItem) {
                 <div class="product-buttons">
                     <a href="<?php echo url_for('@detail_item?slug=' . $item['slug']) ?>"
                        title="<?php echo htmlentities($item['name']) ?>"
-                       class="btn btn-outline-primary btn-sm">Xem Cửa Hàng</a>
+                       class="btn btn-outline-primary btn-sm">Check hàng</a>
                 </div>
             </div>
         </div>

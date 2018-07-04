@@ -31,7 +31,7 @@ class pageHomeActions extends sfActions
 
             if (!empty($arrLocation)) {
                 foreach ($arrLocation as $code) {
-                    $listMassage = adMassageTable::getListMassageByLocation($code, 4);
+                    $listMassage = adMassageTable::getListMassageByLocation($code, 12);
                     $arrMassage[$code] = $listMassage;
                 }
             }
