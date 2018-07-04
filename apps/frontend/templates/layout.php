@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <?php include_http_metas() ?>
     <?php include_metas() ?>
-    <?php include_title() ?>
+<!--    --><?php //include_title() ?>
     <link rel="shortcut icon" href="/favicon.ico"/>
 
     <meta name="viewport"
@@ -13,6 +13,10 @@
     <meta name="theme-color" content="#000000">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="shortcut icon" href="/AppIconSmall.png">
+
+
+    <title><?php include_slot('title') ?></title>
+    <title><?php include_slot('seo') ?></title>
 
     <!--    <link rel="stylesheet" href="/massage/style/css/semantic.min.css">-->
     <!--    <link rel="stylesheet" media="screen" href="/massage/style/css/vendor.min.css">-->

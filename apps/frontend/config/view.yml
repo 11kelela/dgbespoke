@@ -19,6 +19,7 @@ default:
     - /massage/style/css/customizer.min.css
     - /massage/style/css/iziToast.min.css
     - /massage/style/css/cssBundle.css
+    - /massage/style/css/css_update.css
   javascripts:
 #    - /massage/style/bundle.js
     - /massage/style/js/jquery.min.js

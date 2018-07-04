@@ -28,7 +28,7 @@
                                     <ul>
                                         <?php
                                         foreach ($arrChildMenu['listItem'] as $item2) {
-                                            if ($countMessage['mm_' . $item2['id']] && $countMessage['mm_' . $item2['id']] > 0) {
+                                            if (isset($countMessage['mm_' . $item2['id']]) && $countMessage['mm_' . $item2['id']] > 0) {
                                                 ?>
                                                 <li class="has-children click-pointer active expanded">
                                                     <a id="cat-2-tree"

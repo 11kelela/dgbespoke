@@ -6,14 +6,8 @@ ajax_load_list_item:
   url: /load-item
   param: {module: pageHome, action: ajaxLoadListItem}
 detail_item:
-  url: /detailItem/:slug
+  url: /chi-tiet/:slug
   param: {module: pageHome, action: detailItem}
-listMessage:
-  url: /listMessage/:location
-  param: {module: pageHome, action: listMessage}
-listMessage2:
-  url: /listMessage2
-  param: {module: pageHome, action: listMessage2}
 
 # default rules
 homepage:

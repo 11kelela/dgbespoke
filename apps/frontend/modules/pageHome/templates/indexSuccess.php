@@ -6,6 +6,9 @@
  * Time: 9:33 PM
  */
 ?>
+<?php slot('title') ?>
+<?php echo (!$location && $location == '')?"Tìm kiếm địa điểm cửa hàng mua sắm thời trang, massage, làm đẹp":"Danh sách cửa hàng"; ?>
+<?php end_slot() ?>
 
 <div id="root" class="offcanvas-wrapper">
     <div>

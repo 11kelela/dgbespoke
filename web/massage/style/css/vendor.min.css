@@ -52,7 +52,11 @@
     width:100%;
     min-height:1px;
     padding-right:15px;
-    padding-left:15px
+    padding-left:15px;
+}
+.col-sm-3{
+    /*background: red;*/
+    /*width: 280px;*/
 }
 .col{
     -ms-flex-preferred-size:0;
