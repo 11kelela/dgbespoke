@@ -26,11 +26,11 @@ if ($massage) {
                         <div></div>
                         <div>
                             <div class="ui clearing segment header-prod no-pad"><h3
-                                    class="ui block left floated header"><a href="javascript:history.go(-1)"> Sản
-                                        Phẩm/Dịch Vụ</a></h3>
+                                        class="ui block left floated header"><a href="javascript:history.go(-1)">Cơ sở
+                                        vật chất</a></h3>
                             </div>
                             <div style="padding-top: 15px;"><a
-                                    href="javascript:void(0)">
+                                        href="javascript:void(0)">
                                     <div></div>
                                     <div class="ui two column grid prod-grid">
                                         <div class="stretched row">
@@ -42,13 +42,13 @@ if ($massage) {
                                                         <div class="item">
                                                             <div class="container">
                                                                 <div
-                                                                    class="row justify-content-center align-items-center">
+                                                                        class="row justify-content-center align-items-center">
                                                                     <div class="padding-bottom-1x text-center"
                                                                          style="padding-left: 0px; padding-right: 0px;">
                                                                         <div class="from-bottom">
                                                                             <img
-                                                                                class="d-inline-block w-150 mb-4 img-saleOff"
-                                                                                src="<?php echo VtHelper::getUrlImagePathThumb(sfConfig::get('app_article_images'), $slide['file_path'], 660, 330) ?>">
+                                                                                    class="d-inline-block w-150 mb-4 img-saleOff"
+                                                                                    src="<?php echo VtHelper::getUrlImagePathThumb(sfConfig::get('app_article_images'), $slide['file_path'], 660, 330) ?>">
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -79,7 +79,7 @@ if ($massage) {
                                                     src="https://www.maps.ie/create-google-map/map.php?width=100%&amp;height=600&amp;hl=en&amp;coord=<?php echo $item['lat'] . "," . $item['lng'] ?>&amp;q=<?php echo htmlentities($item['address']) ?>+(<?php echo str_replace('+', ' ', urlencode($item['name'])) ?>)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=A&amp;output=embed"
                                                     frameborder="0" scrolling="no" marginheight="0"
                                                     marginwidth="0"><a
-                                                    href="https://www.mapsdirections.info/fr/mesurer-distance-surface-google-maps.html">www.mapsdirections.info</a>
+                                                        href="https://www.mapsdirections.info/fr/mesurer-distance-surface-google-maps.html">www.mapsdirections.info</a>
                                             </iframe>
 
 
@@ -105,53 +105,23 @@ if ($massage) {
                                                                                               class="active icon"
                                                                                               tabindex="0"
                                                                                               role="radio"></i><i
-                                            aria-checked="false" aria-posinset="2" aria-setsize="5" class="active icon"
-                                            tabindex="0" role="radio"></i><i aria-checked="false" aria-posinset="3"
-                                                                             aria-setsize="5" class="active icon"
-                                                                             tabindex="0" role="radio"></i><i
-                                            aria-checked="true" aria-posinset="4" aria-setsize="5" class="active icon"
-                                            tabindex="0" role="radio"></i><i aria-checked="false" aria-posinset="5"
-                                                                             aria-setsize="5" class="icon" tabindex="0"
-                                                                             role="radio"></i></div>
+                                                aria-checked="false" aria-posinset="2" aria-setsize="5"
+                                                class="active icon"
+                                                tabindex="0" role="radio"></i><i aria-checked="false" aria-posinset="3"
+                                                                                 aria-setsize="5" class="active icon"
+                                                                                 tabindex="0" role="radio"></i><i
+                                                aria-checked="true" aria-posinset="4" aria-setsize="5"
+                                                class="active icon"
+                                                tabindex="0" role="radio"></i><i aria-checked="false" aria-posinset="5"
+                                                                                 aria-setsize="5" class="icon"
+                                                                                 tabindex="0"
+                                                                                 role="radio"></i></div>
                                 </div>
                             </div>
                             <div class="content-mobile">
                                 <p>
                                     <span><?php echo (isset($item['total_view']) && $item['total_view'] > 0) ? $item['total_view'] : 1 ?>
                                         lượt xem</span>
-                                    <!--                                    <span style="float: right;">0 người theo dõi</span>-->
-                                </p>
-
-                                <!--                                <div class="ui fitted divider"></div>-->
-
-                                <!--                                <div class="ui padded four column grid">-->
-                                <!--                                    <div class="column col-func">-->
-                                <!--                                        <div class="func-cmt func-desc"><i aria-hidden="true" class="comment large icon"-->
-                                <!--                                                                           style="padding-left: 0px;"></i>-->
-                                <!---->
-                                <!--                                            <p>Bình Luận</p></div>-->
-                                <!--                                    </div>-->
-                                <!--                                    <div class="column col-func">-->
-                                <!--                                        <div id="l-st" class="func-like func-desc"><i aria-hidden="true"-->
-                                <!--                                                                                      class="thumbs up large icon"></i>-->
-                                <!---->
-                                <!--                                            <p>-->
-                                <?php //echo htmlentities($item['total_view']) ?><!--</p></div>-->
-                                <!--                                    </div>-->
-                                <!--                                    <div class="column col-func">-->
-                                <!--                                        <div id="dl-st" class="func-dislike func-desc"><i aria-hidden="true"-->
-                                <!--                                                                                          class="thumbs down large icon"></i>-->
-                                <!---->
-                                <!--                                            <p>-->
-                                <?php //echo htmlentities($item['total_view']) ?><!--</p></div>-->
-                                <!--                                    </div>-->
-                                <!--                                    <div class="column col-func">-->
-                                <!--                                        <div class="func-heart func-desc"><i id="fv-st" aria-hidden="true"-->
-                                <!--                                                                             class="gratipay big icon"></i>-->
-                                <!---->
-                                <!--                                            <p>Yêu Thích</p></div>-->
-                                <!--                                    </div>-->
-                                <!--                                </div>-->
                                 <div class="ui fitted divider"></div>
                                 <div class="ui items desc-store">
                                     <div class="item">
@@ -159,8 +129,6 @@ if ($massage) {
                                                                              class="blue marker large icon"></i><span><?php echo htmlentities($item['address']) ?></span>
                                         </div>
                                     </div>
-                                    <div></div>
-                                    <div></div>
                                     <div class="item">
                                         <div class="left aligned content"><i aria-hidden="true"
                                                                              class="blue info large icon"></i><span>
@@ -181,13 +149,27 @@ if ($massage) {
                                     <div class="item">
                                         <div class="middle aligned content"><i aria-hidden="true"
                                                                                class="black phone large icon"></i><span
-                                                style="color: rgb(59, 89, 152);"><a
-                                                    href="tel:+<?php echo htmlentities($item['phone']) ?>"> <?php echo htmlentities($item['phone']) ?></a></span>
+                                                    style="color: rgb(59, 89, 152);"><a
+                                                        href="tel:+<?php echo htmlentities($item['phone']) ?>"> <?php echo htmlentities($item['phone']) ?></a></span>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="ui fitted divider"></div>
+                                <?php
+                                if ($item['content']) {
+                                    ?>
+                                    <div class="ui items desc-store">
+                                        <div class="item">
+                                            <div class="left aligned content">
+                                                <?php echo $item['content']; ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="ui fitted divider"></div>
+                                    <?php
+                                }
+                                ?>
 
-                                <!--                        test-->
 
                                 <div id="disqus_thread"></div>
                                 <script>
@@ -209,7 +191,7 @@ if ($massage) {
                                     })();
                                 </script>
                                 <noscript>Please enable JavaScript to view the <a
-                                        href="https://disqus.com/?ref_noscript">comments
+                                            href="https://disqus.com/?ref_noscript">comments
                                         powered by Disqus.</a></noscript>
 
 
@@ -222,8 +204,8 @@ if ($massage) {
                     </div>
                     <div class="col-md-6 col-sm-6 is-mobile">
                         <div></div>
-                        <div class="ui clearing segment header-prod no-pad"><h3 class="ui block left floated header">Sản
-                                Phẩm/Dịch Vụ</h3>
+                        <div class="ui clearing segment header-prod no-pad"><h3 class="ui block left floated header">Cơ
+                                sở vật chất</h3>
                         </div>
                         <div style="padding-top: 15px;">
                             <div></div>
@@ -241,8 +223,8 @@ if ($massage) {
                                                                  style="padding-left: 0px; padding-right: 0px;">
                                                                 <div class="from-bottom" style="min-width: 320px;">
                                                                     <img
-                                                                        class="d-inline-block w-150 mb-4 img-saleOff"
-                                                                        src="<?php echo VtHelper::getUrlImagePathThumb(sfConfig::get('app_article_images'), $slide['file_path'], 660, 330) ?>">
+                                                                            class="d-inline-block w-150 mb-4 img-saleOff"
+                                                                            src="<?php echo VtHelper::getUrlImagePathThumb(sfConfig::get('app_article_images'), $slide['file_path'], 660, 330) ?>">
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -269,7 +251,7 @@ if ($massage) {
                                                         src="https://www.maps.ie/create-google-map/map.php?width=100%&amp;height=600&amp;hl=en&amp;coord=<?php echo $item['lat'] . "," . $item['lng'] ?>&amp;q=<?php echo htmlentities($item['address']) ?>+(<?php echo str_replace('+', ' ', urlencode($item['name'])) ?>)&amp;ie=UTF8&amp;t=&amp;z=14&amp;iwloc=A&amp;output=embed"
                                                         frameborder="0" scrolling="no" marginheight="0"
                                                         marginwidth="0"><a
-                                                        href="https://www.mapsdirections.info/fr/mesurer-distance-surface-google-maps.html">www.mapsdirections.info</a>
+                                                            href="https://www.mapsdirections.info/fr/mesurer-distance-surface-google-maps.html">www.mapsdirections.info</a>
                                                 </iframe>
 
 
