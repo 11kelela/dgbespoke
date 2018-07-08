@@ -267,4 +267,15 @@ class VtSEO
         return VtHelper::substring($str,$limit);
     }
 
+
+    public static function getContenSeoByKey($key){
+        $listAllConfig = AdConfigTable::getAllConfig();
+        $listConfig = array();
+        if($listAllConfig){
+            foreach ($listAllConfig as $val){
+                $listConfig[$val['config_key']] = $val['config_val'];
+            }
+        }
+        return !empty($listConfig[$key])?$listConfig[$key]:'';
+    }
 }

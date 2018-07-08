@@ -4,6 +4,11 @@
     <meta charset="utf-8">
     <?php include_http_metas() ?>
     <?php include_metas() ?>
+    <meta property="og:title" content="<?php echo VtSEO::getContenSeoByKey('fb_title'); ?>">
+    <meta property="og:description" content="<?php echo VtSEO::getContenSeoByKey('fb_description'); ?>">
+    <meta property="og:image" content="<?php echo VtSEO::getContenSeoByKey('fb_imgage'); ?>">
+    <meta property="og:url" content="<?php echo VtSEO::getContenSeoByKey('fb_url'); ?>">
+    <meta property="fb:app_id" content="994884514006407">
 <!--    --><?php //include_title() ?>
     <link rel="shortcut icon" href="/favicon.ico"/>
 
@@ -15,8 +20,8 @@
     <link rel="shortcut icon" href="/AppIconSmall.png">
 
 
-    <title><?php include_slot('title') ?></title>
-    <title><?php include_slot('seo') ?></title>
+<!--    <title>--><?php //include_slot('title') ?><!--</title>-->
+<!--    <title>--><?php //include_slot('seo') ?><!--</title>-->
 
     <!--    <link rel="stylesheet" href="/massage/style/css/semantic.min.css">-->
     <!--    <link rel="stylesheet" media="screen" href="/massage/style/css/vendor.min.css">-->

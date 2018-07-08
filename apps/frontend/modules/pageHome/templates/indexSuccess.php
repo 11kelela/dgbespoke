@@ -44,7 +44,7 @@
                             <div>
                                 <?php
                                 if (!$location && $location == '') {
-                                    foreach ($arrLocation as $code) {
+                                    foreach ($arrLocation as $key => $code) {
                                         if (isset($arrMassage[$code]) && $arrMassage[$code]) {
                                             ?>
                                             <h1 class="text-center mb-30 title-header-section">
