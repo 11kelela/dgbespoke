@@ -9,7 +9,7 @@
     <meta property="og:image" content="<?php echo VtSEO::getContenSeoByKey('fb_imgage'); ?>">
     <meta property="og:url" content="<?php echo VtSEO::getContenSeoByKey('fb_url'); ?>">
     <meta property="fb:app_id" content="994884514006407">
-<!--    --><?php //include_title() ?>
+    <?php include_title() ?>
     <link rel="shortcut icon" href="/favicon.ico"/>
 
     <meta name="viewport"

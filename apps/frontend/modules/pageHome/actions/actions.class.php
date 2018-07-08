@@ -43,9 +43,19 @@ class pageHomeActions extends sfActions
         $this->isAll = $isAll;
     }
 
+    public function executeListMessage(sfWebRequest $request)
+    {
+
+    }
+
+    public function executeListMessage2(sfWebRequest $request)
+    {
+
+    }
 
     public function executeDetailItem(sfWebRequest $request)
     {
+        $this->setLayout(false);
         $slug = $request->getParameter('slug');
         $massage = false;
         $slide = false;
